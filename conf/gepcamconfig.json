@@ -1,0 +1,65 @@
+{
+    "global": {
+        "hostname": "Luedenscheid"
+    },
+    "tracking": {
+        "stream_config": {
+            "url": "rtsp://xxxxxxx"
+        },
+        "settings": {
+            "downscale_width": 0,
+            "downscale_height": 800,
+            "ptz_width": 1920,
+            "ptz_height": 1080,
+            "object_detector_history": 5,
+            "object_detector_Threshold": 290,
+            "skip_frames_between": 0
+        }
+    },
+    "recording": {
+        "cam1": {
+            "name": "Cam-Uebersicht",
+            "stream_url": "rtsp://xxxxxxx",
+            "store_path": "/data/cam1/",
+            "max_store_diskspace": 200000
+        },
+        "cam2": {
+            "name": "PTZ-Cam",
+            "stream_url": "rtsp://xxxxxxx",
+            "store_path": "/data/cam2/",
+            "max_store_diskspace": 500000,
+            "turn_180": 1
+        }
+    },
+    "ptz": {
+        "onvif": {
+            "protocol": "http",
+            "hostname": "10.xx.xx.xx",
+            "port": "80",
+            "username": "onvif",
+            "password": "xxxxx"
+        },
+        "settings": {
+            "ptz_width": 1920,
+            "ptz_height": 1080,
+            "p_resolution": 1e-08,
+            "t_resolution": 1e-08,
+            "events_logfile": "events.log",
+            "LookupMatrix_file": "lookupmatrix.dat",
+            "ratelimits": {
+                "300": 600,
+                "86400": 50000
+            },
+            "distancelimits": {
+                "7200": 290000
+            }
+        }
+    },
+    "event-picker": {
+        "event_path": "/data/events/",
+        "events_logfile": "/data/log/events.log",
+        "show_seconds_before": 1.0,
+        "show_seconds_after": 5.0,
+        "min_seconds": 0.0
+    }
+}
